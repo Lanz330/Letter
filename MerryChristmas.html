@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Merry Christmas ❤️</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(120deg, #ffdde1, #ee9ca7);
+            font-family: 'Georgia', serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .letter {
+            background: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            animation: fadeIn 2s ease;
+        }
+
+        .letter p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #333;
+            opacity: 0;
+            animation: textFade 2s ease forwards;
+            animation-delay: 1s;
+            white-space: pre-line;
+        }
+
+        .heart {
+            text-align: center;
+            font-size: 40px;
+            animation: heartbeat 1.5s infinite;
+            margin-bottom: 20px;
+        }
+
+        .signature {
+            margin-top: 30px;
+            font-style: italic;
+            text-align: right;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes textFade {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            40% { transform: scale(1); }
+            60% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .floating-heart {
+            position: fixed;
+            bottom: -20px;
+            font-size: 20px;
+            animation: floatUp 6s linear infinite;
+            opacity: 0.6;
+        }
+
+        @keyframes floatUp {
+            from {
+                transform: translateY(0);
+                opacity: 0.8;
+            }
+            to {
+                transform: translateY(-120vh);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="letter">
+    <div class="heart">❤️</div>
+
+    <p>
+Dear Cynnliu,
+
+Merry Christmas Sayangg, this is our first Christmas together! We have great experiences this fast few months I can say that I enjoyed those moments with you and I know you aswell, though sometimes there are misunderstanding but we still manage to overcome them. I know this is your first time having someone to be more than friends with and the funny thing is that this is my first time to be with someone who is her first time.. uhm yeah just like what they said it's a curse but at the same time it's not..yeah a bit difficult but I can handle... you still clueless about this stuffs like those thing you should and shouldn't do, they are understandable coz it's your first time. One thing we should  keep within ourselves is 'trust', I'm really serious about you and I'm not thinking of finding else beside you. Just like the saying goes, "I would give you the moon" then I would aswell for you. Even though a long distance stands within us and years of waiting to be finally see you, before that I will make sure that you will meet the best version me and I hope you do aswell, again Merry Christmas Sayangg 🎄🎅more Christmas to come!! I love youu more than anyone elsee! Aku sayang kamu❤️
+    </p>
+
+    <div class="signature">
+        Your sayang,<br>
+        Lanz
+    </div>
+</div>
+
+<script>
+    function createHeart() {
+        const heart = document.createElement("div");
+        heart.className = "floating-heart";
+        heart.innerHTML = "❤️";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = (4 + Math.random() * 3) + "s";
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 6000);
+    }
+
+    setInterval(createHeart, 500);
+</script>
+
+</body>
+</html>
